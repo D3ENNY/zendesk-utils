@@ -1,0 +1,55 @@
+html {
+    color: #f4ece0;
+    color: #eee6d9;
+}
+
+body, h1, p, button {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    background-color: #06090a;
+}
+
+/* Imposta il contenitore principale */
+.container {
+    width: 300px; 
+    height: 400px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+
+header h1 {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+main p {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+footer {
+    padding-top: 20px;
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    border-top: 1px solid #2f3435;
+    width: 100%;
+}
