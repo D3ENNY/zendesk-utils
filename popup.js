@@ -2,12 +2,12 @@ document.addEventListener('DOMContentLoaded', () => {
   changeDocument();
 });
 
-let changeDocument = () => {
+function changeDocument() {
   console.log('start');
   chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
       chrome.scripting.executeScript({
           target: { tabId: tabs[0].id },
-          function: main,
+          function: replaceAllVariable,
           args: []
       }, (injectionResults) => {
           const result = injectionResults[0]?.result; // Controllo sul risultato dell'iniezione
@@ -16,11 +16,7 @@ let changeDocument = () => {
   });
 }
 
-let main = () => {
-  replaceColor()
-}
-
-let replaceColor = () => {
+function replaceAllVariable() {
   console.log("QUIIII");
   document.querySelectorAll(".sc-15mtwvo-0.gjlqHm").forEach(element => {
       if (element.textContent == "Pianificato"){
