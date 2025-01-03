@@ -8,7 +8,7 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
           const elements = document.querySelectorAll(".sc-15mtwvo-0.gjlqHm");
           elements.forEach(element => {
             if (element.textContent === "Pianificato") { 
-              element.style.backgroundColor = "#bD42ff4d";
+              element.style.backgroundColor = "#421c6b";
             }
           });
         };
