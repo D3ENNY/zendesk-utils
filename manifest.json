@@ -1,28 +1,29 @@
 {
-  "update_url": "https://clients2.google.com/service/update2/crx",
-
+  "host_permissions": [
+    "https://*.zendesk.com/*"
+  ],
   "manifest_version": 3,
-    "name": "Zendesk-utils",
-    "version": "1.0.0",
-    "description": "Implementa nuove funzioni in zendesk",
-    "permissions": ["scripting", "activeTab"],
+  "permissions": ["activeTab", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
 
-    "action": {
-      "default_popup": "popup.html",
-      "default_icon": {
-        "16": "assets/icons/favicon.png",
-        "48": "assets/icons/favicon.png",
-        "128": "assets/icons/favicon.png"
-      }
-    },
+  "icons": {
+    "16": "assets/icons/favicon.png",
+    "48": "assets/icons/favicon.png",
+    "128": "assets/icons/favicon.png"
+  },
 
-    "content_scripts": [
-      {
-        "matches": ["https://*.zendesk.com/*"],
-        "js": ["popup.js"]
-      }
-    ],
-    "host_permissions": [
-      "https://*.zendesk.com/*"
-    ]
-  }
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "assets/icons/favicon.png",
+      "48": "assets/icons/favicon.png",
+      "128": "assets/icons/favicon.png"
+    }
+  },
+  "name": "Zendesk-utils",
+  "version": "1.0.0",
+  "description": "Implementa nuove funzioni in zendesk"
+}
+
