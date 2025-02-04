@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,35 +8,39 @@
     <title>Zendesk utils</title>
 
     <link rel="stylesheet" href="style/style.css">
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="style/color-picker.css">
+
     <script src="script/colorPicker.js" defer></script>
 </head>
+
 <body>
     <div class="container">
-        <div>
-            <header>
-                <h1>Zenddesk Utils!</h1>
-            </header>
+        <header>
+            <h1>Zendesk Utils!</h1>
+        </header>
 
-            <section>
-                <h1>Selettore Colori</h1>
-                    <div class="picker-container">
-                    <div class="color-box" id="colorBox"></div>
-                    <input type="range" id="colorRange" min="0" max="360" value="0">
-                    <div class="hex-code" id="hexCode">#ff0000</div>
-                </div>  
-            </section>
+        <section>
+            <div class="colorpicker">
+                <br>Tonalità:<br>
+                <input type="range" id="colorRange" min="0" max="360" value="0">
+                <br>Luminosità:<br>
+                <input type="range" id="lightnessRange" min="0" max="100" value="50">
+                <br>Trasparenza:<br>
+                <input type="range" id="alphaRange" min="0" max="100" value="100">
+                <div id="colorBox"></div>
+            </div>
+        </section>
 
-            <main>
-                <p>Quest'estensione aggiunge le seguenti funzionalità alla webapp di <a href="www.zendesk.com">Zendesk</a></p>
-            </main>
-        </div>
+        <main>
 
-
-        <footer>
-            <p>© 2024 Zendesk utils</p>
-        </footer>
+        </main>
     </div>
+    
+    <footer>
+        <p>© 2024 Zendesk utils</p>
+    </footer>
+    
     <script src="popup.js"></script>
 </body>
+
 </html>

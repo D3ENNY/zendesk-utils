@@ -1,0 +1,35 @@
+.colorpicker {
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 2%;
+}
+
+#colorBox {
+    width: 30px;
+    height: 100px;
+    margin: 20px auto;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    position: absolute;
+    top: 23px;
+    right: 10px; 
+    z-index: 1;
+}
+input[type="range"] {
+    width: 80%;
+    margin: 10px 0;
+    appearance: none;
+    height: 10px;
+    border-radius: 5px;
+    outline: none;
+}
+#colorRange {
+    background: linear-gradient(to right, red, yellow, lime, cyan, blue, magenta, red);
+}
+#lightnessRange {
+    background: linear-gradient(to right, #000, var(--color), #fff);
+}
+#alphaRange {
+    background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,1));
+}
+
