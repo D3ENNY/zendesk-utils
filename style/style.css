@@ -58,6 +58,14 @@ footer {
     position: relative;
 }
 
+p.menu {
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #2f3435;
+    font-weight: bold;
+}
+
 .grid {
     display: grid;
     /* border: 1px solid red; */
@@ -91,4 +99,9 @@ footer {
 .section-grid-element {
     background-color: #202733;
     border-radius: 20px;
+}
+
+.section-grid-element:hover {
+    background-color: #22264d;
+    cursor: pointer;
 }
