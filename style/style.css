@@ -60,13 +60,13 @@ footer {
 
 .grid {
     display: grid;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     height:50vh;
     gap: 10px;
 }
 
 .grid > .row {
-    border: 1px solid blue; 
+    /* border: 1px solid blue;  */
     min-height: max-content;
     display: inline-flex;
 }
@@ -79,12 +79,12 @@ footer {
 }
 
 .row > div:nth-child(1) {
-    border: 1px solid green;
+    /* border: 1px solid green; */
     width: 70%;
 }
 
 .row > div:nth-child(2) {
-    border: 1px solid green;
+    /* border: 1px solid green; */
     width: 30%;
 }
 
