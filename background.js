@@ -4,23 +4,22 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
 
     chrome.scripting.executeScript({
       target: { tabId: tabId },
-      function: main()
-    })
+      function: main
+    });
   }
-})
+});
 
-function main(){
-  const ChangeColor = (content, color) => {
-    const elements = document.querySelectorAll(".sc-15mtwvo-0.gjlqHm");
+function main() {
+  const ChangeElementColor = (element, content, color) => {
+    const elements = document.querySelectorAll(element)
     elements.forEach(element => {
-      if (element.textContent === content) { 
+      if (element.textContent.trim() === content) {
         element.style.backgroundColor = color
       }
     })
   }
 
-  setInterval( () => {
-    ChangeColor("Pianificato", "#421c6b")
+  setInterval(() => {
+    ChangeElementColor(".sc-15mtwvo-0.gjlqHm", "Pianificato", "#421c6b")
   }, 2000)
-
 }

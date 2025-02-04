@@ -7,6 +7,8 @@
     <title>Zendesk utils</title>
 
     <link rel="stylesheet" href="style/style.css">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script src="script/colorPicker.js" defer></script>
 </head>
 <body>
     <div class="container">
@@ -14,6 +16,15 @@
             <header>
                 <h1>Zenddesk Utils!</h1>
             </header>
+
+            <section>
+                <h1>Selettore Colori</h1>
+                    <div class="picker-container">
+                    <div class="color-box" id="colorBox"></div>
+                    <input type="range" id="colorRange" min="0" max="360" value="0">
+                    <div class="hex-code" id="hexCode">#ff0000</div>
+                </div>  
+            </section>
 
             <main>
                 <p>Quest'estensione aggiunge le seguenti funzionalità alla webapp di <a href="www.zendesk.com">Zendesk</a></p>
