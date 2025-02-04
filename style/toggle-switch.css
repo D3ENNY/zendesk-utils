@@ -3,7 +3,6 @@
 .switch {
     --a: 0.5s ease-out;
     cursor: pointer;
-    position: relative;
     display: inline-flex;
     height: 1em;
     border-radius: 2em;
@@ -13,7 +12,7 @@
   }
   
   /* Hide default HTML checkbox */
-  #check {
+  .cursor {
     opacity: 0;
     width: 0;
     height: 0;
@@ -35,7 +34,7 @@
     transform-origin: center;
   }
   
-  #check:checked ~ .switch svg path {
+  .cursor:checked ~ .switch svg path {
     stroke-dashoffset: 180;
     transform: scaleY(-1);
   }

@@ -58,6 +58,37 @@ footer {
     position: relative;
 }
 
-section{
-    position: relative;
+.grid {
+    display: grid;
+    border: 1px solid red;
+    height:50vh;
+    gap: 10px;
+}
+
+.grid > .row {
+    border: 1px solid blue; 
+    min-height: max-content;
+    display: inline-flex;
+}
+
+.row > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center
+}
+
+.row > div:nth-child(1) {
+    border: 1px solid green;
+    width: 70%;
+}
+
+.row > div:nth-child(2) {
+    border: 1px solid green;
+    width: 30%;
+}
+
+.section-grid-element {
+    background-color: #202733;
+    border-radius: 20px;
 }
