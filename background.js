@@ -20,6 +20,6 @@ function main() {
   }
 
   setInterval(() => {
-    ChangeElementColor(".sc-15mtwvo-0.gjlqHm", "Pianificato", "#421c6b")
+    ChangeElementColor(".ljoqst", "Pianificato", "#421c6b")
   }, 2000)
 }
