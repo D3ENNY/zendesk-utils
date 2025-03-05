@@ -1,0 +1,42 @@
+/* Forza la dark mode su tutto il sito */
+* {
+    background-color: #121212 !important;
+    color: #e0e0e0 !important;
+    border-color: #333 !important;
+}
+
+/* Specifico per elementi testuali */
+p, span, div, h1, h2, h3, h4, h5, h6, a, li, td, th, label {
+    color: #e0e0e0 !important;
+}
+
+/* Inverti immagini solo se necessario */
+img, video {
+    filter: brightness(80%) contrast(110%) !important;
+}
+
+/* Stili specifici per input e form */
+input, textarea, select, button {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0 !important;
+    border: 1px solid #333 !important;
+}
+
+/* Correggere link */
+a {
+    color: #bb86fc !important;
+}
+a:hover {
+    color: #ff79c6 !important;
+}
+
+/* Scrollbar scura */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #121212;
+}
+::-webkit-scrollbar-thumb {
+    background: #333;
+}

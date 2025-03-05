@@ -10,16 +10,28 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
 });
 
 function main() {
+
+
   const ChangeElementColor = (element, content, color) => {
     const elements = document.querySelectorAll(element)
     elements.forEach(element => {
       if (element.textContent.trim() === content) {
         element.style.backgroundColor = color
       }
-    })
+    })    
+    
   }
 
   setInterval(() => {
     ChangeElementColor(".ljoqst", "Pianificato", "#421c6b")
   }, 2000)
+
+  // const getOs = () => {
+  //   const os = require('os')
+  //   let platform = os.platform()
+  //   return platform
+  // }
+
+  // console.log(getOs());
+
 }
