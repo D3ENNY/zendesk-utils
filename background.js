@@ -23,7 +23,7 @@ function main() {
   }
 
   setInterval(() => {
-    ChangeElementColor(".ljoqst", "Pianificato", "#421c6b")
+    ChangeElementColor(".iTAtji", "Pianificato", "#421c6b")
   }, 2000)
 
   // const getOs = () => {
