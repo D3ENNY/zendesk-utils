@@ -17,6 +17,7 @@ function main() {
 
     elements.filter(el => el.textContent.trim() == content).forEach(el => {
       el.style.backgroundColor = color
+
     })
   } 
 
@@ -26,7 +27,7 @@ function main() {
     elements.filter(el => el.textContent.includes(content)).forEach(el => {
       el.style.textDecoration = "underline"
       el.style.textDecorationColor = color
-      el.style.textUnderlineOffset = "3px"
+      el.style.textUnderlineOffset = "4px"
       el.style.textDecorationThickness = "2px"
     })
   }
@@ -34,8 +35,9 @@ function main() {
 
   setInterval(() => {
     ChangeElementColor(".sc-15mtwvo-0", "Pianificato", "#421c6b")
-    ChangeElementColor(".sc-15mtwvo-0", "Aperto", "#008f39ab")
-    ChangeElementColor(".sc-15mtwvo-0", "Aperto - 2Liv", "#4bb213ab")
+    ChangeElementColor(".sc-15mtwvo-0", "In sospeso", "#00294aff")
+    ChangeElementColor(".sc-15mtwvo-0", "In lavorazione", "#4bb213ab")
+    ChangeElementColor(".sc-15mtwvo-0", "Aperto - 2Liv", "#008f39ab")
 
     UnderlineElement(".StyledButton-sc-qe3ace-0", "[Failed]", "#ff0000")
     UnderlineElement(".StyledButton-sc-qe3ace-0", "[Warning]", "#ffa500")
