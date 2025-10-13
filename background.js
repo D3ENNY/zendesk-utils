@@ -11,35 +11,26 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
 
 function main() {
 
-  let mapColor = [["Pianificato", "#421c6b"], ["In sospeso", "#00294aff"], ["In lavorazione", "#4bb213ab"], ["Aperto - 2Liv", "#008f39ab"]]
+  let ticketStatusMapColor = [["Pianificato", "#421c6b"], ["In sospeso", "#00294aff"], ["In lavorazione", "#4bb213ab"], ["Aperto - 2Liv", "#008f39ab"]]
+  let TextUnderlineMapColor = [["[Failed]", "#ff0000"], ["[Warning]", "#ffa500"], ["[Success]", "#00ff00"]]
+  let style = document.createElement('style');
+  
+  style.textContent = `
+    .styled-underline {
+      position: relative;
+      display: inline-block;
+    }
 
-
-  const ChangeElementColor = (element, mapColor) => {
-    let elements = [...document.querySelectorAll(element)]
-    console.log("call ChangeElementColor")
-
-    elements.forEach(single => {
-      mapColor.forEach(el => {
-        if (single.textContent == el[0]) {
-          single.style.backgroundColor = el[1]
-        }
-
-      })
-    })
-
-  }
-
-  const UnderlineElement = (element, content, color) => {
-    let elements = [...document.querySelectorAll(element)]
-    console.log("call UnderlineElement");
-
-    elements.filter(el => el.textContent.includes(content)).forEach(el => {
-      el.style.textDecoration = "underline"
-      el.style.textDecorationColor = color
-      el.style.textUnderlineOffset = "4px"
-      el.style.textDecorationThickness = "2px"
-    })
-  }
+    .styled-underline::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 1.3em;
+      width: 100%;
+      height: 2px;
+      background-color: var(--underline-color, currentColor);
+    }
+  `
 
   function waitForElm(selector) {
     return new Promise(resolve => {
@@ -61,27 +52,47 @@ function main() {
     })
   }
 
-  waitForElm('.sc-15mtwvo-0').then(() => {
-    console.log('Element is loaded')
+  const applyStyles = () => {
 
-    ChangeElementColor(".sc-15mtwvo-0", mapColor)
+    if(!document.head.querySelector('style[data-ticket-style]')){
+      style.setAttribute('data-ticket-style', 'true');
+      document.head.appendChild(style);
+    }
 
-    UnderlineElement(".StyledButton-sc-qe3ace-0", "[Failed]", "#ff0000")
-    UnderlineElement(".StyledButton-sc-qe3ace-0", "[Warning]", "#ffa500")
-    UnderlineElement(".StyledButton-sc-qe3ace-0", "[Success]", "#00ff00")
+    ChangeElementColor(".sc-15mtwvo-0", ticketStatusMapColor)
+    UnderlineElement(".StyledButton-sc-qe3ace-0", TextUnderlineMapColor)
+  }
 
-  })
+  const ChangeElementColor = (element, mapColor) => {
+    let elements = [...document.querySelectorAll(element)]
+    console.log("call ChangeElementColor")
+
+    elements.forEach(single => {
+      mapColor.forEach(([param, color]) => {
+        if (single.textContent == param) {
+          single.style.backgroundColor = color
+        }
+      })
+    })
+  }
+
+  const UnderlineElement = (element, mapColor) => {
+    let elements = [...document.querySelectorAll(element)]
+    console.log("call UnderlineElement");
+
+    elements.forEach(single => {
+      mapColor.forEach(([param, color]) => {
+        if (single.textContent.includes(param)) {
+          single.classList.add("styled-underline")
+          single.style.setProperty('--underline-color', color);
+        }
+      })
+    })
+  }
+
+  waitForElm('.sc-15mtwvo-0').then(applyStyles)
 
   document.onclick = function (event) {
-    waitForElm('.sc-15mtwvo-0').then(() => {
-      console.log('Element is loaded')
-
-      ChangeElementColor(".sc-15mtwvo-0", mapColor)
-
-      UnderlineElement(".StyledButton-sc-qe3ace-0", "[Failed]", "#ff0000")
-      UnderlineElement(".StyledButton-sc-qe3ace-0", "[Warning]", "#ffa500")
-      UnderlineElement(".StyledButton-sc-qe3ace-0", "[Success]", "#00ff00")
-
-    })
+    waitForElm('.sc-15mtwvo-0').then(applyStyles)
   }
 }
