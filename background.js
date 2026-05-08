@@ -59,7 +59,7 @@ function main() {
       document.head.appendChild(style);
     }
 
-    ChangeElementColor(".sc-15mtwvo-0", ticketStatusMapColor)
+    ChangeElementColor(".sc-NsUQg", ticketStatusMapColor)
     UnderlineElement(".StyledButton-sc-qe3ace-0", TextUnderlineMapColor)
   }
 
@@ -90,9 +90,9 @@ function main() {
     })
   }
 
-  waitForElm('.sc-15mtwvo-0').then(applyStyles)
+  waitForElm('.sc-NsUQg').then(applyStyles)
 
   document.onclick = function (event) {
-    waitForElm('.sc-15mtwvo-0').then(applyStyles)
+    waitForElm('.sc-NsUQg').then(applyStyles)
   }
 }
