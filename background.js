@@ -14,7 +14,9 @@ function main() {
   let ticketStatusMapColor = [["Pianificato", "#421c6b"], ["In sospeso", "#00294aff"], ["In lavorazione", "#4bb213ab"], ["Aperto - 2Liv", "#008f39ab"]]
   let TextUnderlineMapColor = [["[Failed]", "#ff0000"], ["[Warning]", "#ffa500"], ["[Success]", "#00ff00"]]
   let style = document.createElement('style');
-  
+  let classStatusTicket = ".sc-15mtwvo-0"
+  let classObjectTicket = ".StyledButton-sc-qe3ace-0"
+
   style.textContent = `
     .styled-underline {
       position: relative;
@@ -59,8 +61,8 @@ function main() {
       document.head.appendChild(style);
     }
 
-    ChangeElementColor(".sc-NsUQg", ticketStatusMapColor)
-    UnderlineElement(".StyledButton-sc-qe3ace-0", TextUnderlineMapColor)
+    ChangeElementColor(classStatusTicket, ticketStatusMapColor)
+    UnderlineElement(classObjectTicket, TextUnderlineMapColor)
   }
 
   const ChangeElementColor = (element, mapColor) => {
@@ -90,9 +92,9 @@ function main() {
     })
   }
 
-  waitForElm('.sc-NsUQg').then(applyStyles)
+  waitForElm(classStatusTicket).then(applyStyles)
 
   document.onclick = function (event) {
-    waitForElm('.sc-NsUQg').then(applyStyles)
+    waitForElm(classStatusTicket).then(applyStyles)
   }
 }
